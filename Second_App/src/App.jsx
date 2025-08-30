@@ -1,38 +1,45 @@
 // Component and props
 import './App.css'
-import Props from './Props';
+// import Props from './Props';
+import Header from './website/Header';
+import  Hero  from './website/Hero';
+import Service from './website/Service';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Creating a component (Function )
-function Welcome(props){
-  return (
-    <div>
-      <h2>Hello, {props.nam} </h2>
-      {/* <p>Welcome to react leraning journey</p> */}
-    </div>
-  );
-}
+// function Welcome(props){
+//   return (
+//     <div>
+//       <h2>Hello, {props.nam} </h2>
+//       {/* <p>Welcome to react leraning journey</p> */}
+//     </div>
+//   );
+// }
 
-function Hellow(abhay){
-  return (
-    <div>
-      <h1>Hellow, {abhay.coder}</h1>
-      <p>This is coder area</p>
-      <p>hellow World</p>
-    </div>
-  )
-}
+// function Hellow(abhay){
+//   return (
+//     <div>
+//       <h1>Hellow, {abhay.coder}</h1>
+//       <p>This is coder area</p>
+//       <p>hellow World</p>
+//     </div>
+//   )
+// }
 function App() {
   return (
     <div>
       {/* <h1 className="h1">Components and props </h1> <hr /> */}
       {/* reusing components with different props */}
-      <center>
-      <Welcome nam="Abhay" /> <hr />
+      {/* <center> */}
+      {/* <Welcome nam="Abhay" /> <hr />
       <Welcome nam="Ajay" />
       <hr />
       <Props name="Abhay" role="Developer" />
-      <hr />
-      </center>
+      <hr /> */}
+      <Header />
+      <Hero />
+      <Service />
+      {/* </center> */}
     </div>
   );
 }
