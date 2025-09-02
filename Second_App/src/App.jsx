@@ -1,10 +1,18 @@
 // Component and props
 import './App.css'
-// import Props from './Props';
 import Header from './website/Header';
-import  Hero  from './website/Hero';
-import Service from './website/Service';
+import Home from './website/Home';
+// import About from './website/About';
+// import Props from './Props';
+// import  Hero  from './website/Hero';
+// import  About  from './website/About';
+// import Service from './website/Service';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Service from './website/Service';
+import About from './website/About';
+import Task1 from './task/Task1';
+import Tsign from './task/Tsign';
 
 // Creating a component (Function )
 // function Welcome(props){
@@ -36,10 +44,22 @@ function App() {
       <hr />
       <Props name="Abhay" role="Developer" />
       <hr /> */}
-      <Header />
+      {/* <Header />
       <Hero />
-      <Service />
+      <Service /> */}
       {/* </center> */}
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='header' element={<Header />} />
+          {/* <Route path="header" element={<Header />} />
+          <Route path="hero" element={<Hero />} /> */}
+          <Route path="service" element={<Service />} />
+          <Route path="about" element={<About />} />
+          <Route path="task1" element={<Task1 />} />
+          <Route path="tsign" element={<Tsign />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

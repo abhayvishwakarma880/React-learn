@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial,  sans-serif;
+}
+.grow{
+  color: #fff;
+  font-size: 20px;
+  
+}
+.pgrow{
+  color: #fff;
+  font-size: 10px;
+}
+.mbtn{
+  width: 15%;
+  height: 30px;
+  font-size: 13px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+}

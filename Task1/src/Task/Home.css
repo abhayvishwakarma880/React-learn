@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.digi {
+  font-size: 30px;
+  font-weight: bolder;
+  padding-top: 3%;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 4%;
+}
+
+ul li {
+  padding-top: 8px;
+  font-style: normal;
+  list-style: none;
+  font-weight: 900;
+}
+ul li button{
+  text-decoration: none;
+  border: none;
+  background: none;
+  font-family: Arial, sans-serif;
+}
+ul li button:hover{
+  color: #027bfe;
+  transition: .2s all linear;
+}
+.ani{
+  border: 1px solid #027bfe;
+  animation: anii 1s infinite;
+}
+@keyframes anii{
+  /* 0%{
+    width: 0%;
+  }
+  25%{
+    width: 25%;
+  }
+  50%{
+    width: 50%;
+  }
+  75%{
+    width: 75%;
+  }
+  100%{
+    width: 100%;
+  } */
+   from{
+    width: 0%;
+   }
+   to{
+    width: 100%;
+   }
+}
