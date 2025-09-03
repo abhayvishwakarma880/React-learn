@@ -1,5 +1,5 @@
 import Container from 'react-bootstrap/esm/Container';
-import './Courses.css'
+import './Courses.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
@@ -42,7 +42,6 @@ function Courses(){
               <Col sm={3} >
                 <Row style={{ minHeight: "100px" }} className="mt-3 mx-0 shadoww">
                   <Col>
-
                     <p className="text-center f">Python with django</p>
                     <p className="text-center cate">Category: Web</p>
                     <p className="text-center du">Duration: 6 Month</p>
@@ -52,7 +51,6 @@ function Courses(){
               <Col sm={3} >
                 <Row style={{ minHeight: "100px" }} className="mt-3 mx-0 shadoww">
                   <Col>
-
                     <p className="text-center f">React Native</p>
                     <p className="text-center cate">Category: Mobile</p>
                     <p className="text-center du">Duration: 4 Month</p>
@@ -62,7 +60,6 @@ function Courses(){
               <Col sm={3} >
                 <Row style={{ minHeight: "100px" }} className="mt-3 mx-0 shadoww">
                   <Col>
-
                     <p className="text-center f">Android Development</p>
                     <p className="text-center cate">Category: Mobile</p>
                     <p className="text-center du">Duration: 4 Month</p>
@@ -74,7 +71,6 @@ function Courses(){
               <Col sm={3} >
                 <Row style={{ minHeight: "100px" }} className="mt-3 mx-0 shadoww">
                   <Col>
-
                     <p className="text-center f">Data science</p>
                     <p className="text-center cate">Category: AI</p>
                     <p className="text-center du">Duration: 6 Month</p>
@@ -84,19 +80,14 @@ function Courses(){
               <Col sm={3} >
                 <Row style={{ minHeight: "100px" }} className="mt-3 mx-0 shadoww">
                   <Col>
-
                     <p className="text-center f">Machine Learning</p>
                     <p className="text-center cate">Category: AI</p>
                     <p className="text-center du">Duration: 5 Month</p>
                   </Col>
                 </Row>
               </Col>
-              <Col sm={3} >
-                
-              </Col>
-              <Col sm={3} >
-                
-              </Col>
+              <Col sm={3} ></Col>
+              <Col sm={3} ></Col>
             </Row>
           </Col>
           <Col sm={3}></Col>
