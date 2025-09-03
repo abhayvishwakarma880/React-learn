@@ -1,0 +1,33 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.c{
+  font-size: 25px;
+}
+input{
+  padding-left: 5px;
+  width: 100%;
+}
+select{
+  width: 100%;
+  height: 80%;
+}
+.f{
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+}
+.cate{
+  margin-top: -13px;
+  font-size: 12px;
+}
+.du{
+  margin-top: -13px;
+  font-size: 12px;
+}
+.shadoww{
+  box-shadow: 0 0 6px rgba(0,0,0, 0.3);
+  border-radius: 5px;
+}

@@ -14,4 +14,3 @@ Benefits Of hooks :
 1. Simplifide code
 2. improved performance
 3. easier debugging
-4. 
