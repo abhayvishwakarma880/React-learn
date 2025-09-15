@@ -1,32 +1,60 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+// import { ToastContainer } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
     email: "",
     password: "",
-    cassword: "",
+    cpassword: "",
   });
   const handelChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const handelSubmit = (e) => {
-    e.preventdefault();
+    e.preventDefault();
     if (
       !formData.fname ||
       !formData.lname ||
       !formData.email ||
       !formData.password ||
-      !formData.cassword
+      !formData.cpassword
     ) {
-      alert("please fill All fields");
-    } else if (formData.password !== formData.cassword) {
-      alert("New Password and Confirm Password does not match");
+      // alert("please fill All fields");
+      // Swal.fire("Error", "Please fill all fields", "error");
+      toast.error("Please fill all fields");
+      //   toast.success("Login Successful!", {
+      //   position: "top-right",
+      //   autoClose: 3000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      // }); // ✅ success
+    } else if (formData.password !== formData.cpassword) {
+      // alert("New Password and Confirm Password does not match");
+      Swal.fire("Error", "New Password and Confirm Password does not match", "error");
+    }else{
+      localStorage.setItem("signupData", JSON.stringify(formData));
+      // alert("data saved");
+      Swal.fire("Success", "Data Saved Successfully!", "success");
+      setFormData({
+        fname: "",
+        lname: "",
+        email: "",
+        password: "",
+        cpassword: "",
+      })
+      navigate("/login");
     }
-    localStorage.setItem("signupData", JSON.stringify(formData));
-    alert("data saved");
   };
   return (
     <div className="min-height flex items-center justify-center bg-gradient-to-r from-purple-400 to-blue-500">
@@ -155,6 +183,8 @@ const Signup = () => {
           </div>
         </form>
       </div>
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
+
     </div>
   );
 };

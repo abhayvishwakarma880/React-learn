@@ -1,4 +1,6 @@
 
+import Dashboard from './Admin/Dashboard';
+import DashBySir from './Admin/DashBySir';
 import Login from './Admin/Login';
 import Signup from './Admin/Signup'
 import './App.css'
@@ -12,6 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Signup />} />
           <Route path="login" element={<Login />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="dashBySir" element={<DashBySir />} />
         </Routes>
       </Router>
       
