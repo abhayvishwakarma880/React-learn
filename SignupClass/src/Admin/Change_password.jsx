@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const Login = () => {
+const Change_password = () => {
   const navigate = useNavigate();
   const [loginData, setLoginData] = useState({
     email: "",
@@ -28,27 +28,27 @@ const Login = () => {
     else if( loginData.email === storedData.email && loginData.password === storedData.password ){
       // alert('login success')
       Swal.fire("Success", "Login Successfull", "success")
-      navigate("/dashBySir");
+      navigate("/dashboard");
     }
   }
   return (
-    <div className="h-screen flex items-center justify-center bg-gradient-to-r from-purple-400 to-blue-500">
+    <div className="m-auto">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
         <h1 className="text-center text-2xl font-bold text-gray-800 ">
-          Welcome Back
+          Change password
         </h1>
-        <p className="text-center text-gray-500 text-sm">
-          signin to contiue to your journey
-        </p>
+        {/* <p className="text-center text-gray-500 text-sm">
+          Change password 
+        </p> */}
 
         <form className="space-y-4">
           <div>
             <label className="block text-gray-700 text-sm font-medium">
-              Email:
+              Old Password:
             </label>
             <input
-              type="text"
-              placeholder="Your Email"
+              type="password"
+              placeholder="Your Old Password"
               className="mt-1 w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400"
               name="email"
               value={loginData.email}
@@ -56,26 +56,19 @@ const Login = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Password
+            <label className="block text-gray-700 text-sm font-medium">
+              New Password:
             </label>
             <input
-              type="text"
-              placeholder="Your Password"
+              type="password"
+              placeholder="Your New Password"
               className="mt-1 w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400"
-              name="password"
-              value={loginData.password}
+              name="email"
+              value={loginData.email}
               onChange={handleChange}
             />
           </div>
           <div className="flex justify-between items-center gap-2">
-            <div className="flex justify-center items-center">
-              <input type="checkbox" className="h-4 w-4 text-blue-600" />
-              <p className="text-sm pl-1 text-gray-700">remember me</p>
-            </div>
-            <div>
-              <Link to="/forget_pass" className="text-sm text-gray-700">Forget Password</Link>
-            </div>
           </div>
 
           <div>
@@ -83,20 +76,26 @@ const Login = () => {
               onClick={handleSubmit}
               className="w-full  py-2 bg-gradient-to-r from-blue-500 to-purple-500  text-white font-semibold rounded-md cursor-pointer hover:opacity-90 transition duration-200 ease-in-out"
             >
-              Sign In
+              Update Password
             </button>
           </div>
 
-          <div>
+          {/* <div>
+            <p className="text-sm text-gray-700 text-center py-2">
+              You have an account?{" "}
+              <Link to="/login" className="text-blue-500 underline">
+                Login Here
+              </Link>{" "}
+            </p>
             <p className="text-sm text-gray-700 text-center py-2">
               Don't have an account?{" "}
               <Link to="/" className="text-blue-500 underline">
                 Sign up
               </Link>{" "}
             </p>
-          </div>
+          </div> */}
 
-          <div>
+          {/* <div>
             <p className="text-center text-gray-500 text-sm">
               Or countinue with
             </p>
@@ -108,11 +107,11 @@ const Login = () => {
                 Facebook
               </button>
             </div>
-          </div>
+          </div> */}
         </form>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Change_password;

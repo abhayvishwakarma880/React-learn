@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const Login = () => {
+const Forget_pass = () => {
   const navigate = useNavigate();
   const [loginData, setLoginData] = useState({
     email: "",
@@ -28,7 +28,7 @@ const Login = () => {
     else if( loginData.email === storedData.email && loginData.password === storedData.password ){
       // alert('login success')
       Swal.fire("Success", "Login Successfull", "success")
-      navigate("/dashBySir");
+      navigate("/dashboard");
     }
   }
   return (
@@ -38,7 +38,7 @@ const Login = () => {
           Welcome Back
         </h1>
         <p className="text-center text-gray-500 text-sm">
-          signin to contiue to your journey
+          Forget Password
         </p>
 
         <form className="space-y-4">
@@ -55,7 +55,7 @@ const Login = () => {
               onChange={handleChange}
             />
           </div>
-          <div>
+          {/* <div>
             <label className="block text-sm font-medium text-gray-700">
               Password
             </label>
@@ -67,15 +67,15 @@ const Login = () => {
               value={loginData.password}
               onChange={handleChange}
             />
-          </div>
+          </div> */}
           <div className="flex justify-between items-center gap-2">
-            <div className="flex justify-center items-center">
+            {/* <div className="flex justify-center items-center">
               <input type="checkbox" className="h-4 w-4 text-blue-600" />
               <p className="text-sm pl-1 text-gray-700">remember me</p>
-            </div>
-            <div>
-              <Link to="/forget_pass" className="text-sm text-gray-700">Forget Password</Link>
-            </div>
+            </div> */}
+            {/* <div>
+              <Link className="text-sm text-gray-700">Forget Password</Link>
+            </div> */}
           </div>
 
           <div>
@@ -83,11 +83,17 @@ const Login = () => {
               onClick={handleSubmit}
               className="w-full  py-2 bg-gradient-to-r from-blue-500 to-purple-500  text-white font-semibold rounded-md cursor-pointer hover:opacity-90 transition duration-200 ease-in-out"
             >
-              Sign In
+              Send
             </button>
           </div>
 
           <div>
+            <p className="text-sm text-gray-700 text-center py-2">
+              You have an account?{" "}
+              <Link to="/login" className="text-blue-500 underline">
+                Login Here
+              </Link>{" "}
+            </p>
             <p className="text-sm text-gray-700 text-center py-2">
               Don't have an account?{" "}
               <Link to="/" className="text-blue-500 underline">
@@ -96,7 +102,7 @@ const Login = () => {
             </p>
           </div>
 
-          <div>
+          {/* <div>
             <p className="text-center text-gray-500 text-sm">
               Or countinue with
             </p>
@@ -108,11 +114,11 @@ const Login = () => {
                 Facebook
               </button>
             </div>
-          </div>
+          </div> */}
         </form>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Forget_pass;

@@ -1,6 +1,7 @@
 
 import Dashboard from './Admin/Dashboard';
 import DashBySir from './Admin/DashBySir';
+import Forget_pass from './Admin/Forget_pass';
 import Login from './Admin/Login';
 import Signup from './Admin/Signup'
 import './App.css'
@@ -16,6 +17,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="dashBySir" element={<DashBySir />} />
+          <Route path="forget_pass" element={<Forget_pass />} />
         </Routes>
       </Router>
       

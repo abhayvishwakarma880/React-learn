@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import "./Dash.css";
+import Users from "./Users";
+import Orders from "./Orders";
+import Products from "./Products";
+import Change_password from "./Change_password";
+import Category from "./Category";
 
 // mock data for the dashboard
 const userData = {
@@ -19,6 +24,109 @@ const DashBySir = () => {
   const toggleSidebar = () => {
     setActivepage(!sidebarOpen);
   };
+
+  // by me start
+  const renderContent = () => {
+    switch (activepage) {
+      case "dashboard":
+        return (
+          <>
+            {/* Stats Card start  */}
+            <div className="stats-grid flex justify-around ">
+              {storeData.map((stat, index) => (
+                <div key={index} className="stat-card">
+                  <div className="stat-info">
+                    <h3 className="font-bold text-2xl">{stat.value}</h3>
+                    <p className="pt-2">{stat.title}</p>
+                  </div>
+                  <div
+                    className={`stat-change ${
+                      stat.change.includes("+") ? "positive" : "negative"
+                    }`}
+                  >
+                    {stat.change}
+                  </div>
+                </div>
+              ))}
+            </div>
+            {/* Stats Card end  */}
+            {/* main Content end  */}
+
+            {/* Additional section start */}
+
+            <div className="additional-section">
+              <div className="quick-actions">
+                <h3 className="text-2xl font-semibold">Quick Actions</h3>
+                <div className="action-buttons">
+                  <button className="action-btn">Add Product</button>
+                  <button className="action-btn">Generate Report</button>
+                  <button className="action-btn">Send Message</button>
+                  <button className="action-btn">Manage Users</button>
+                </div>
+              </div>
+
+              <div className="upcoming-events">
+                <h3 className="text-2xl font-semibold">Upcoming Events</h3>
+                <div className="event-item">
+                  <div className="event-date">
+                    <span className="event-day">15</span>
+                    <span className="event-month">Sep</span>
+                  </div>
+                  <div className="event-details">
+                    <p>Team Meeting</p>
+                    <span>10:00 AM-Conference Room</span>
+                  </div>
+                </div>
+                <div className="event-item">
+                  <div className="event-date">
+                    <span className="event-day">18</span>
+                    <span className="event-month">Sep</span>
+                  </div>
+                  <div className="event-details">
+                    <p>Product Launch</p>
+                    <span>2:00-Main Hall</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Additional section end */}
+          </>
+        );
+      case 'users':
+        return(
+          <>
+          <Users />
+          </>
+        );
+      case 'orders':
+        return(
+          <>
+            <Orders />
+          </>
+        );
+      case 'products':
+        return(
+          <>
+            <Products />
+          </>
+        );
+      case 'category':
+        return(
+          <>
+            <Category />
+          </>
+        );
+      case 'change_pass':
+        return(
+          <>
+            <Change_password />
+          </>
+        );
+    }
+  };
+  // by me end
+
   return (
     <div
       className={`dashboard-container ${
@@ -54,9 +162,19 @@ const DashBySir = () => {
                 Products
               </a>
             </li>
+            <li className={activepage === "category" ? "active" : ""}>
+              <a href="#category" onClick={() => setActivepage("category")}>
+                Category
+              </a>
+            </li>
             <li className={activepage === "setting" ? "active" : ""}>
               <a href="#setting" onClick={() => setActivepage("setting")}>
                 Setting
+              </a>
+            </li>
+            <li className={activepage === "change_pass" ? "active" : ""}>
+              <a href="#change_pass" onClick={() => setActivepage("change_pass")}>
+                Change password
               </a>
             </li>
             <li className={activepage === "setting" ? "active" : ""}>
@@ -101,70 +219,7 @@ const DashBySir = () => {
         </header>
         {/* Header end  */}
 
-        {/* Stats Card start  */}
-        <div className="stats-grid flex justify-around">
-          {storeData.map((stat, index) => (
-            <div key={index} className="stat-card">
-              <div className="stat-info">
-                <h3 className="font-bold text-2xl">{stat.value}</h3>
-                <p className="pt-2">{stat.title}</p>
-              </div>
-              <div
-                className={`stat-change ${
-                  stat.change.includes("+") ? "positive" : "negative"
-                }`}
-              >
-                {stat.change}
-              </div>
-            </div>
-          ))}
-        </div>
-        {/* Stats Card end  */}
-
-
-        
-
-        {/* main Content end  */}
-
-        {/* Additional section start */}
-
-        <div className="additional-section">
-          <div className="quick-actions">
-            <h3 className="text-2xl font-semibold">Quick Actions</h3>
-            <div className="action-buttons">
-              <button className="action-btn">Add Product</button>
-              <button className="action-btn">Generate Report</button>
-              <button className="action-btn">Send Message</button>
-              <button className="action-btn">Manage Users</button>
-            </div>
-          </div>
-
-          <div className="upcoming-events">
-            <h3 className="text-2xl font-semibold">Upcoming Events</h3>
-            <div className="event-item">
-              <div className="event-date">
-                <span className="event-day">15</span>
-                <span className="event-month">Sep</span>
-              </div>
-              <div className="event-details">
-                <p>Team Meeting</p>
-                <span>10:00 AM-Conference Room</span>
-              </div>
-            </div>
-            <div className="event-item">
-              <div className="event-date">
-                <span className="event-day">18</span>
-                <span className="event-month">Sep</span>
-              </div>
-              <div className="event-details">
-                <p>Product Launch</p>
-                <span>2:00-Main Hall</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Additional section end */}
+        {renderContent()}
       </div>
     </div>
   );
